@@ -1,1 +1,35 @@
-public static void
+import java.uti.*;
+public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+     System.out.print("Enter your Name: ");
+        String name = sc.nextLine();
+        System.out.print("How many times? ");
+        int times = sc.nextInt();
+        
+        int count = 0;
+        while (count <times){
+            System.out.println(name);
+            count++;     
+        }
+        
+        Random random = new Random();
+        int guessNum = random.nextInt(99) + 1;
+        
+        int uGuess = 0;  
+        int tries = 0; 
+
+        while (uGuess != guessNum) {
+
+            System.out.print("Guess a number (0-99): ");
+            uGuess = sc.nextInt();
+            tries++; 
+            
+            if (uGuess < guessNum) {
+                System.out.println("Higher");
+            } else if (uGuess > guessNum) {
+                System.out.println("Lower");
+            } else {
+                System.out.println("Congrats "+ name +"! You guessed the number correctly in " + tries + " tries.");
+            }
+        }
+    }
